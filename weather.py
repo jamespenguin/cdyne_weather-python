@@ -28,6 +28,10 @@ class session:
                 sub_element_value = new_values
             else:
                 sub_element_value = sub_element.text
+                if sub_element_value == "true":
+                    sub_element_value = True
+                elif sub_element_value == "false":
+                    sub_element_value = False
             dictionary[sub_element_name] = sub_element_value
         return dictionary
 
@@ -47,6 +51,10 @@ class session:
                     element_value = values
                 else:
                     element_value = element.text
+                    if element_value == "true":
+                        element_value = True
+                    elif element_value == "false":
+                        element_value = False
                 dictionary[element_name] = element_value
         return dictionary
 
